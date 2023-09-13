@@ -53,7 +53,7 @@
 
                 <div class="single-property-wrapper">
                     <div class="single-property-header">
-                        <h1 class="property-title pull-left">Villa in Coral Gables</h1>
+                        <h1 class="property-title pull-left"> {{$property['Title']}}</h1>
                         <span class="property-price pull-right">$825,000</span>
                     </div>
 

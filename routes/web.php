@@ -36,7 +36,7 @@ use App\Models\Property;
 //routes 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/properties', [PropertyController::class, 'index'],)->name('properties');
-Route::get('/property', [PropertyController::class, 'index'])->name('property');
+//Route::get('/property', [PropertyController::class, 'index'])->name('property');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -47,7 +47,7 @@ Route::get('/terms', [TermsController::class, 'index'])->name('terms');
 Route::get('/404', [PagenotfoundController::class, 'index'])->name('404');
  
  
-Route::get('/properties/{property}', [PropertyController::class, 'show'],)->name('property');
+Route::get('/properties/{property}', [PropertyController::class, 'show'],) ;
 
 
 

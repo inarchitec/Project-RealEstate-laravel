@@ -357,22 +357,21 @@
 
           <div class="col-md-12 clear">
             <div id="list-type" class="proerty-th">
-{{--           <h2>{{$properties}}</h2> --}}
+ 
                 @foreach ($properties as $property)
                  
               
-
-
+ 
               <div class="col-sm-6 col-md-4 p0">
                 <div class="box-two proerty-item">
                   <div class="item-thumb">
-                    <a href="property-1.html"
+                    <a href="/properties/{{$property['id']}}"
                       ><img src="assets/img/demo/property-3.jpg"
                     /></a>
                   </div>
 
                   <div class="item-entry overflow">
-                    <h5><a href="property-1.html"> {{$property['Title']}} </a></h5>
+                    <h5><a href="/properties/{{$property['id']}}"> {{$property['Title']}} </a></h5>
                     <div class="dot-hr"></div>
                     <span class="pull-left"><b> Area :</b> {{$property['Area']}} Msq </span>
                     <span class="proerty-price pull-right"> {{$property['Price']}} ETB</span>
@@ -389,6 +388,7 @@
                   </div>
                 </div>
               </div>
+            
               @endforeach
               
  
