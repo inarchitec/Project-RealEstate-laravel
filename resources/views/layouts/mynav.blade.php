@@ -22,28 +22,29 @@
       type="text/css" />
 
     <!-- Place favicon.ico  the root directory -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
    
-    <link rel="stylesheet" href="assets/css/normalize.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/fontello.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/fontello.css')}}" />
     <link
-      href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css"
+      href="{{asset('assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css')}}"
       rel="stylesheet" />
-    <link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
-    <link href="assets/css/animate.css" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/icheck.min_all.css" />
-    <link rel="stylesheet" href="assets/css/price-range.css" />
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.css" />
-    <link rel="stylesheet" href="assets/css/owl.transitions.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="stylesheet" href="assets/css/wizard.css" />
-  </head>
+    <link href="{{asset('assets/fonts/icon-7-stroke/css/helper.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/icheck.min_all.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/price-range.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/wizard.css')}}" />
+    
+   </head>
   <body>
     <div id="preloader">
       <div id="status">&nbsp;</div>
@@ -106,7 +107,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.html">
-            <img src="assets/img/logo.png" alt=""
+            <img src="{{asset('assets/img/logo.png')}}" alt=""
           /></a>
         </div>
 
@@ -156,9 +157,9 @@
     </nav>
     <!-- End of nav bar -->
 <body>
-   @yield('home-content')
-   @yield('properties-content')
-   @yield('blog-content')
+   @yield('home-contents')
+   @yield('properties-contents')
+   @yield('blog-contents')
    @yield('contact-contents')
    @yield('register-contents')
    @yield('login-contents')
@@ -180,7 +181,7 @@
                 <div class="footer-title-line"></div>
 
                 <img
-                  src="assets/img/footer-logo.png"
+                  src="{{asset('assets/img/footer-logo.png')}}"
                   alt=""
                   class="wow pulse"
                   data-wow-delay="1s" />
@@ -222,7 +223,7 @@
                   <li>
                     <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
                       <a href="single.html">
-                        <img src="assets/img/demo/small-proerty-2.jpg" />
+                        <img src="{{asset('assets/img/demo/small-proerty-2.jpg')}}" />
                       </a>
                       <span class="blg-date">12-12-2016</span>
                     </div>
@@ -237,7 +238,7 @@
                   <li>
                     <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
                       <a href="single.html">
-                        <img src="assets/img/demo/small-proerty-2.jpg" />
+                        <img src="{{asset('assets/img/demo/small-proerty-2.jpg')}}" />
                       </a>
                       <span class="blg-date">12-12-2016</span>
                     </div>
@@ -252,7 +253,7 @@
                   <li>
                     <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
                       <a href="single.html">
-                        <img src="assets/img/demo/small-proerty-2.jpg" />
+                        <img src="{{asset('assets/img/demo/small-proerty-2.jpg')}}" />
                       </a>
                       <span class="blg-date">12-12-2016</span>
                     </div>
@@ -422,8 +423,7 @@
 
     <script src="{{asset('assets/js/icheck.min.js')}}"></script>
     <script src="{{asset('assets/js/price-range.js')}}"></script>
-
- {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script> --}}
+  {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script> --}}
   
     <script src="{{asset('assets/js/main.js')}}"></script>
   </body>

@@ -1,6 +1,6 @@
 @extends('layouts.mynav')
 
-@section('properties-content')
+@section('properties-contents')
       
  
   <div class="properties-area recent-property" style="background-color: #fff">
@@ -236,7 +236,7 @@
                   <li>
                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
                       <a href="single.html"
-                        ><img src="assets/img/demo/small-property-2.jpg"
+                        ><img src="{{asset('assets/img/demo/small-property-2.jpg')}}"
                       /></a>
                       <span class="property-seeker">
                         <b class="b-1">A</b>
@@ -251,7 +251,7 @@
                   <li>
                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
                       <a href="single.html"
-                        ><img src="assets/img/demo/small-property-1.jpg"
+                        ><img src="{{asset('assets/img/demo/small-property-1.jpg')}}"
                       /></a>
                       <span class="property-seeker">
                         <b class="b-1">A</b>
@@ -266,7 +266,7 @@
                   <li>
                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
                       <a href="single.html"
-                        ><img src="assets/img/demo/small-property-3.jpg"
+                        ><img src="{{asset('assets/img/demo/small-property-3.jpg')}}"
                       /></a>
                       <span class="property-seeker">
                         <b class="b-1">A</b>
@@ -282,7 +282,7 @@
                   <li>
                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
                       <a href="single.html"
-                        ><img src="assets/img/demo/small-property-2.jpg"
+                        ><img src="{{asset('assets/img/demo/small-property-2.jpg')}}"
                       /></a>
                       <span class="property-seeker">
                         <b class="b-1">A</b>
@@ -357,33 +357,34 @@
 
           <div class="col-md-12 clear">
             <div id="list-type" class="proerty-th">
- 
-                @foreach ($properties as $property)
+             
+              @foreach ($properties as $property)
+  
                  
               
  
               <div class="col-sm-6 col-md-4 p0">
                 <div class="box-two proerty-item">
                   <div class="item-thumb">
-                    <a href="/properties/{{$property['id']}}"
-                      ><img src="assets/img/demo/property-3.jpg"
+                    <a href="/properties/{{$property->id}}"
+                      ><img src="{{$property->Images}}"
                     /></a>
                   </div>
 
                   <div class="item-entry overflow">
-                    <h5><a href="/properties/{{$property['id']}}"> {{$property['Title']}} </a></h5>
+                    <h5><a href="/properties/{{$property->id}}"> {{$property->Title}} </a></h5>
                     <div class="dot-hr"></div>
-                    <span class="pull-left"><b> Area :</b> {{$property['Area']}} Msq </span>
-                    <span class="proerty-price pull-right"> {{$property['Price']}} ETB</span>
+                    <span class="pull-left"><b> Area :</b> {{$property->Area}} Msq </span>
+                    <span class="proerty-price pull-right"> {{$property->Price}} ETB</span>
                     <p style="display: none">
                       Suspendisse ultricies Suspendisse ultricies Nulla quis
                       dapibus nisl. Suspendisse ultricies commodo arcu nec
                       pretium ...
                     </p>
                     <div class="property-icon">
-                      <img src="assets/img/icon/bed.png" /> ({{$property['Bedroom']}})
-                      <img src="assets/img/icon/shawer.png" /> ({{$property['Bathroom']}})
-                      <img src="assets/img/icon/cars.png" /> ({{$property['Parking']}})
+                      <img src="{{asset('assets/img/icon/bed.png')}}" /> ({{$property->Bedroom}})
+                      <img src="{{asset('assets/img/icon/shawer.png')}}" /> ({{$property->Bathroom}})
+                      <img src="{{asset('assets/img/icon/cars.png')}}" /> ({{$property->Parking}})
                     </div>
                   </div>
                 </div>

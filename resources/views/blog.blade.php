@@ -1,6 +1,6 @@
 @extends('layouts.mynav')
 
-@section('blog-content')
+@section('blog-contents')
 
 <div class="page-head">
     <div class="container">

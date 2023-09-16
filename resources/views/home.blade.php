@@ -1,6 +1,6 @@
 @extends('layouts.mynav')
 
-@section('home-content')
+@section('home-contents')
 <div class="slider-area">
     <div class="slider">
       <div id="bg-slider" class="owl-carousel owl-theme">

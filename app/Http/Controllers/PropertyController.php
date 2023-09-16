@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Property;
-
+use App\Models\Propertygallery;
+use Illuminate\Support\Facades\DB;
+ 
 class PropertyController extends Controller
 {
     /**
@@ -13,11 +15,19 @@ class PropertyController extends Controller
      */
     public function index()
     {
-       
+
+        $properties = DB::table('properties')
+   /*      ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id")
+        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") */
+        ->get();    
+
+     
+      /*    dd($properties);   */
+
+
         return view('properties',[
-            'properties' => Property::all()
-        ]);
-       
+            'properties' => $properties,] );
+    
     }
 
     /**
@@ -41,10 +51,34 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-        //
+
+        /* $slides = Propertygallery::all()->where("Property_id",$property->id) ; */
+
+        
+        $slides = DB::table('propertygalleries')->where("Property_id",$property->id)->get(/* "Room_Image" */) ;
+        $slides->toArray();
+   /*   dd($slides);  */    
+ 
+     
+         
+
+
+        $properties = DB::table('properties')
+   /*      ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id")  */
+        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") 
+        ->get()->where("id",$property->id) ;  
+
+            
+        
+
+     
+   /*   dd($slides);     */
         return view('property',[
-            'property' => $property
+            'property' => $property, 'properties' => $properties,  'slides' => $slides,  
+           
+           
         ]);
+       
     }
 
     /**

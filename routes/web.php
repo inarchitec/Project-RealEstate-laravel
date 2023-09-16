@@ -14,6 +14,7 @@ use App\Http\Controllers\PagenotfoundController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\PropertygalleryController;
 use App\Http\Controllers\SubmitpropertyController;
 use App\Models\Property;
 
@@ -47,7 +48,8 @@ Route::get('/terms', [TermsController::class, 'index'])->name('terms');
 Route::get('/404', [PagenotfoundController::class, 'index'])->name('404');
  
  
-Route::get('/properties/{property}', [PropertyController::class, 'show'],) ;
+Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
+ 
 
 
 

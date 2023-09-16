@@ -12,13 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('agents', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
+            $table->integer("Assigned_Property_id");
+           
             $table->string("Attributes");
             $table->string("Name");
             $table->string("Email");
             $table->string("Phone");
             $table->string("Description");
             $table->timestamps();
+            $table->string("Photo")->default("jurica-koletic-7YVZYZeITc8-unsplash.jpg") ;
         });
     }
 

@@ -18,18 +18,13 @@ class AgentFactory extends Factory
     {
         return [
             //
-     /*        $table->id();
-         $table->string("Attributes");
-            $table->string("Name");
-            $table->string("Email");
-            $table->string("Phone");
-            $table->string("Description");
-            $table->timestamps(); */
+            'Assigned_Property_id'=> $this->faker->randomNumber(1, true),
             'Attributes'=> $this->faker->sentence(),
             'Name'=> $this->faker->name(),
             'Email'=> $this->faker->Email(),
             'Phone'=> $this->faker->phoneNumber(),
             'Description'=> $this->faker->sentence(),
+         /*  'Photo'=> $this->faker->sentence(),  */
            
 
         ];

@@ -1218,7 +1218,7 @@ Asside widgets CSS
     background: blue;
 }
 .panel.sidebar-menu .panel-body span.colour.yellow {
-    background: yellow;
+    background: var(--green);
 }
 .panel.sidebar-menu .panel-body label {
     color: #777;
@@ -1393,13 +1393,13 @@ Asside widgets CSS
 
 .pagination ul {
     display: inline-block;
-    *display: inline;
+    display: inline;
     margin-bottom: 0;
     margin-left: 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    *zoom: 1;
+    zoom: 1;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -2026,7 +2026,7 @@ single property page
     letter-spacing: 3px;
 }
 .single-property-header .property-price{
-    color: #FFA500;
+    color: var(--green);
     font-size: 30px;
     letter-spacing: 1.5px;
     right: 0px;
@@ -2038,7 +2038,7 @@ single property page
 }
 .s-property-title {
     margin-bottom: 15px;
-    color: #FFA500;
+    color: var(--green);
     font-size: 18px;
 }
 

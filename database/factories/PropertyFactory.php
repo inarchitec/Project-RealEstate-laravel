@@ -30,12 +30,14 @@ class PropertyFactory extends Factory
             'Living_room'=> $this->faker->randomDigit(),
             'Family_room'=> $this->faker->randomDigit(),
             'Total_room'=> $this->faker->randomDigit(),
-            'Description'=> $this->faker->word(),
+            'Description'=> $this->faker->sentence(),
             'Additional_features'=> $this->faker->word(),
-            'Images'=> $this->faker->image(null, 640, 480),
-           /*  'Videos'=> $this->faker->Videos(), */
+
+/*             'Images'=> $this->faker->imageUrl(360, 360, 'animals', true, 'dogs', true),
+ */           /*  'Videos'=> $this->faker->Videos(), */
             'Location_city'=> $this->faker->word(),
             'Location_woreda_kebele'=> $this->faker->word(),
+         
         ];
     }
 }
