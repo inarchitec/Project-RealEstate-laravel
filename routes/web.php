@@ -36,7 +36,7 @@ use App\Models\Property;
 
 //routes 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/properties', [PropertyController::class, 'index'],)->name('properties');
+Route::get('/properties', [PropertyController::class, 'index'],)->name('properties.view');
 //Route::get('/property', [PropertyController::class, 'index'])->name('property');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

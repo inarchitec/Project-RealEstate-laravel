@@ -45,7 +45,7 @@
                               
                                    @foreach ($slides as $item )
                                     
-                              <div class="carousel-item ">
+                              <div class="carousel-item active">
                                       <img class="d-block w-100" src="{{asset('assets/img/agent/'.$item ->Room_Image)}}" alt="First slide">
                                     </div>
                                     @endforeach   

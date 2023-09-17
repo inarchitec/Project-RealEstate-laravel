@@ -57,7 +57,7 @@ class PropertyController extends Controller
         
         $slides = DB::table('propertygalleries')->where("Property_id",$property->id)->get(/* "Room_Image" */) ;
         $slides->toArray();
-   /*   dd($slides);  */    
+/*     dd($slides);   */
  
      
          

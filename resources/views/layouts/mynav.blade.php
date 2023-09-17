@@ -140,7 +140,7 @@
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="properties">Properties</a>
+              <a class="" href="{{route("properties.view")}}">Properties</a>
             </li>
             <li class="wow fadeInDown" data-wow-delay="0.1s">
               <a class="" href="blog">blog</a>
@@ -423,7 +423,7 @@
 
     <script src="{{asset('assets/js/icheck.min.js')}}"></script>
     <script src="{{asset('assets/js/price-range.js')}}"></script>
-  {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script> --}}
+   <script src="{{asset('assets/js/wizard.js')}}"> </script>  
   
     <script src="{{asset('assets/js/main.js')}}"></script>
   </body>

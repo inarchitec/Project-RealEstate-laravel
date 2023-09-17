@@ -41,7 +41,7 @@
               </ul>
 
               <div class="tab-content">
-                <div class="tab-pane" id="step1">
+                <div class="{{-- tab-pane --}}" id="step1">
                   <div class="row p-b-15">
                     <h4 class="info-text">
                       Let's start with the basic information (with validation)
