@@ -423,7 +423,7 @@
 
     <script src="{{asset('assets/js/icheck.min.js')}}"></script>
     <script src="{{asset('assets/js/price-range.js')}}"></script>
-   {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script>  --}} 
+  {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script> --}}
   
     <script src="{{asset('assets/js/main.js')}}"></script>
   </body>
