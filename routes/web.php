@@ -32,12 +32,10 @@ use App\Models\Property;
 
 //Auth::routes();
 
- 
 
 //routes 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/properties', [PropertyController::class, 'index'],)->name('properties');
-//Route::get('/property', [PropertyController::class, 'index'])->name('property');
+Route::get('/properties', [PropertyController::class, 'index'],)->name('properties.view');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
