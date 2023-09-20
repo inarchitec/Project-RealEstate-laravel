@@ -17,8 +17,8 @@ class PropertyController extends Controller
     {
 
         $properties = DB::table('properties')
-   /*      ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id")
-        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") */
+    /*   ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id") */
+        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") 
         ->get();    
 
      

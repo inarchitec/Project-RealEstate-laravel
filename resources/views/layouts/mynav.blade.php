@@ -139,11 +139,11 @@
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="{{route('blogs.view')}}">blog</a>
+              <a class="" href="{{route('blog.view')}}">blog</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.4s">
-              <a href="{{route('contact')}}">Contact</a>
+              <a href="{{route('contact.view')}}">Contact</a>
             </li>
           </ul>
         </div>

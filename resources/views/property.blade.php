@@ -55,8 +55,8 @@
 
                 <div class="single-property-wrapper">
                     <div class="single-property-header">                                          
-                        <h1 class="property-title pull-left">Villa in Coral Gables</h1>
-                        <span class="property-price pull-right">$825,000</span>
+                        <h1 class="property-title pull-left"> {{$property->Title}}</h1>
+                        <span class="property-price pull-right">{{$property->Price}} ETB</span>
                     </div>
 
                     <div class="property-meta entry-meta clearfix ">   
@@ -69,7 +69,7 @@
                             </span>
                             <span class="property-info-entry">
                                 <span class="property-info-label">Status</span>
-                                <span class="property-info-value">For Sale</span>
+                                <span class="property-info-value">{{$property->Status}}</span>
                             </span>
                         </div>
 
@@ -81,10 +81,42 @@
                             </span>
                             <span class="property-info-entry">
                                 <span class="property-info-label">Area</span>
-                                <span class="property-info-value">3500<b class="property-info-unit">Sq Ft</b></span>
+                                <span class="property-info-value">{{$property->Area}}<b class="property-info-unit">Msq</b></span>
                             </span>
                         </div>
-
+                        <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                            <span class="property-info-icon icon-bed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                                <path class="meta-icon" fill="#FFA500" d="M21 48.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v31c0 1.104-.895 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v7.001c0 1.104-.895 1.999-2 1.999zm25 37.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v31c0 1.104-.896 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v7.001c0 1.104-.896 1.999-2 1.999z"></path>
+                                </svg>
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Living Room</span>
+                                <span class="property-info-value">{{$property->Living_room}}</span>
+                            </span>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                            <span class="property-info-icon icon-bed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                                <path class="meta-icon" fill="#FFA500" d="M21 48.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v31c0 1.104-.895 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v7.001c0 1.104-.895 1.999-2 1.999zm25 37.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v31c0 1.104-.896 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v7.001c0 1.104-.896 1.999-2 1.999z"></path>
+                                </svg>
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Kitchen</span>
+                                <span class="property-info-value">{{$property->Kitchen}}</span>
+                            </span>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
+                            <span class="property-info-icon icon-bed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                                <path class="meta-icon" fill="#FFA500" d="M21 48.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v31c0 1.104-.895 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v7.001c0 1.104-.895 1.999-2 1.999zm25 37.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v31c0 1.104-.896 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v7.001c0 1.104-.896 1.999-2 1.999z"></path>
+                                </svg>
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Family room</span>
+                                <span class="property-info-value">{{$property->Family_room}}</span>
+                            </span>
+                        </div>
                         <div class="col-xs-3 col-sm-3 col-md-3 p-b-15">
                             <span class="property-info-icon icon-bed">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
@@ -93,7 +125,7 @@
                             </span>
                             <span class="property-info-entry">
                                 <span class="property-info-label">Bedrooms</span>
-                                <span class="property-info-value">3</span>
+                                <span class="property-info-value">{{$property->Bedroom}}</span>
                             </span>
                         </div>
 
@@ -105,7 +137,7 @@
                             </span>
                             <span class="property-info-entry">
                                 <span class="property-info-label">Bathrooms</span>
-                                <span class="property-info-value">3.5</span>
+                                <span class="property-info-value">{{$property->Bathroom}}</span>
                             </span>
                         </div>
 
@@ -117,7 +149,7 @@
                             </span>
                             <span class="property-info-entry">
                                 <span class="property-info-label">Garages</span>
-                                <span class="property-info-value">2</span>
+                                <span class="property-info-value">{{$property->Parking}}</span>
                             </span>
                         </div>
 
@@ -127,57 +159,23 @@
                     <div class="section">
                         <h4 class="s-property-title">Description</h4>
                         <div class="s-property-content">
-                            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies                                </p>
-                        </div>
+                            <p>{{$property->Description}}</p>
+                         </div>
                     </div>
                     <!-- End description area  -->
 
                     <div class="section additional-details">
                         <h4 class="s-property-title">Additional Details</h4>
-                        <ul class="additional-details-list clearfix">
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
-                            </li>
-
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Built In</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2003</span>
-                            </li>
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Parking</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2 Or More Spaces,Covered Parking,Valet Parking</span>
-                            </li>
-
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
-                            </li>
-
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">View</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal View,Direct ew</span>
-                            </li>
-
-                            <li>
-                                <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront Description:</span>
-                                <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal Front,Ocean Access</span>
-                            </li> 
-
-                        </ul>
+                       <p>{{$property->Additional_features}}</p>
                     </div>  
                     <!-- End additional-details area  -->
 
                     <div class="section property-features">      
 
-                        <h4 class="s-property-title">Features</h4>                            
+                        <h4 class="s-property-title">Address</h4>                            
                         <ul>
-                            <li><a href="properties.html">Swimming Pool</a></li>   
-                            <li><a href="properties.html">3 Stories</a></li>
-                            <li><a href="properties.html">Central Cooling</a></li>
-                            <li><a href="properties.html">Jog Path 2</a></li>
-                            <li><a href="properties.html">2 Lawn</a></li>
-                            <li><a href="properties.html">Bike Path</a></li>
+                            <li><a href="properties.html">{{$property->Location_woreda_kebele}}</a></li>   
+                            <li><a href="properties.html">{{$property->Location_city}}</a></li> 
                         </ul>
 
                     </div>
@@ -207,9 +205,12 @@
                                             <img src="{{asset('assets/img/client-face1.png')}}" class="img-circle">
                                         </a>
                                     </div>
+                                    @foreach ($properties as $item)
+                                  
+                               
                                     <div class="col-xs-8 col-sm-8 ">
                                         <h3 class="dealer-name">
-                                            <a href="">Anania Mesfin</a>
+                                            <a href="">  {{$item->Name}}</a><br>
                                             <span>Real Estate Agent</span>        
                                         </h3>
                                         <div class="dealer-social-media">
@@ -236,12 +237,12 @@
                                 <div class="clear">
                                     <ul class="dealer-contacts">                                       
                                         <li><i class="pe-7s-map-marker strong"> </i> 9089 your adress her</li>
-                                        <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
-                                        <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>
+                                        <li><i class="pe-7s-mail strong"> </i> {{$item->Email}}</li>
+                                        <li><i class="pe-7s-call strong"> </i>{{$item->Phone}}</li>
                                     </ul>
-                                    <p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>
-                                </div>
-
+                                    <p>{{$item->Description}}</p>
+                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
