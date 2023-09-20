@@ -2,7 +2,6 @@
 
 @section('properties-contents')
       
- 
   <div class="properties-area recent-property" style="background-color: #fff">
     <div class="container">
       <div class="row">

@@ -40,9 +40,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/lightslider.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/wizard.css')}}" />
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/wizard.css')}}" /> --}}
     
    </head>
   <body>
@@ -128,26 +129,21 @@
             </button>
           </div>
           <ul class="main-nav nav navbar-nav navbar-right">
+
             <li class="dropdown ymm-sw" data-wow-delay="0.1s">
-              <a
-                href="/"
-                class="dropdown-toggle active"
-                data-toggle="dropdown"
-                data-hover="dropdown"
-                data-delay="200"
-                >Home
-              </a>
+              <a href="/" class="active">Home</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="{{route("properties.view")}}">Properties</a>
+              <a class="" href="{{route('properties.view')}}">Properties</a>
             </li>
+
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="blog">blog</a>
+              <a class="" href="{{route('blogs.view')}}">blog</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.4s">
-              <a href="contact">Contact</a>
+              <a href="{{route('contact')}}">Contact</a>
             </li>
           </ul>
         </div>
@@ -408,26 +404,43 @@
       
        
  
+        
     <script src="{{asset('assets/js/modernizr-2.6.2.min.js')}}"></script>
-    
-     <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>  
+    <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>  
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-hover-dropdown.js')}}"></script>
-
     <script src="{{asset('assets/js/easypiechart.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.easypiechart.min.js')}}"></script>
-
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-
     <script src="{{asset('assets/js/wow.js')}}"></script>
-
     <script src="{{asset('assets/js/icheck.min.js')}}"></script>
     <script src="{{asset('assets/js/price-range.js')}}"></script>
-  {{-- <script src="{{asset('assets/js/wizard.js')}}"> </script> --}}
-  
+    <script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-  </body>
+
+
  
+  <script>
+    $(document).ready(function () {
+
+        $('#image-gallery').lightSlider({
+            gallery: true,
+            item: 1,
+            thumbItem: 9,
+            slideMargin: 0,
+            speed: 500,
+            auto: true,
+            loop: true,
+            onSliderLoad: function () {
+                $('#image-gallery').removeClass('cS-hidden');
+            }
+        });
+    });
+</script>
+
+
+</body>
 
 </html>
 

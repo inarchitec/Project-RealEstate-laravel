@@ -32,17 +32,19 @@ use App\Models\Property;
 
 //Auth::routes();
 
- 
 
 //routes 
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
 Route::get('/properties', [PropertyController::class, 'index'],)->name('properties.view');
-//Route::get('/property', [PropertyController::class, 'index'])->name('property');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/submitproperty', [SubmitpropertyController::class, 'index'])->name('submitproperty');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.view');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.view');
+Route::get('/register', [RegisterController::class, 'index'])->name('register.view');
+Route::get('/login', [LoginController::class, 'index'])->name('login.view');
+Route::get('/submitproperty', [SubmitpropertyController::class, 'index'])->name('submitproperty.view');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/terms', [TermsController::class, 'index'])->name('terms');
 Route::get('/404', [PagenotfoundController::class, 'index'])->name('404');
