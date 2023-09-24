@@ -120,13 +120,13 @@
                     type="text"
                     class="span2"
                     value=""
-                    data-slider-min="20000"
-                    data-slider-max="100000"
-                    data-slider-step="5000"
-                    data-slider-value="[50000,80000]"
+                    data-slider-min="2000000"
+                    data-slider-max="40000000"
+                    data-slider-step="100000"
+                    data-slider-value="[200000,1000000]"
                     id="price-range" /><br />
-                  <b class="pull-left color">2000ETB</b>
-                  <b class="pull-right color">100000ETB</b>
+                  <b class="pull-left color">2,000,000</b>
+                  <b class="pull-right color">40,000,000</b>
                 </div>
                 <!-- End of  -->
 
@@ -283,18 +283,14 @@
       </div>
 
       <div class="row">
-        <div class="proerty-th">
+        <div class="proerty-th" id="search_results">
           
 
           @foreach ($new_properties as $item)
           <div class="col-sm-6 col-md-3 p0">
             <div class="box-two proerty-item">
               <div class="item-thumb">
-                <a href="/properties/{{$item->id}}"
-                  >
-                
-                {{--   <img src="assets/img/demo/property-1.jpg"
-                /> --}}
+                <a href="/properties/{{$item->id}}">
                 <img src="{{$item->Images}}"
                 />
               </a>
@@ -620,16 +616,8 @@
   </script>
 
 <script>
-//   $('.span2').slider().on('slide', function(ev){
-//       let data = $('.span2').slider().val();
-//       let dataval = data.split(",");
-//       console.log('min-val'+dataval[0]);
-//       console.log('max-val'+dataval[1]);
-
-// });
-
   function meetme(){
-    let dataval = "50000,80000";
+    let dataval = "50000,800000";
     let dataval2 = "50,500";
     let dataval3 = "5,10";
     let dataval4 = "5,15";
@@ -669,7 +657,26 @@
         
       }
       console.log(searchdata)
+
+
+    $.ajax(
+      {
+        url: "{{route('home.prop.search')}}",
+        // dataType: 'json', // type of response data
+        // timeout: 500, 
+        data: searchdata,
+        success: function(result){
+          // console.log(result);
+          $("#search_results").html(result);
+        },
+        error: function (jqXhr, textStatus, errorMessage) { // error callback 
+          // $('p').append('Error: ' + errorMessage);
+          alert("fail");
+        }
+      });
   }
+
+
 </script>
 
 @endsection
