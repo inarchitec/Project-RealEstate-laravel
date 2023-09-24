@@ -48,9 +48,6 @@ Route::get('/submitproperty', [SubmitpropertyController::class, 'index'])->name(
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.view');
 Route::get('/terms', [TermsController::class, 'index'])->name('terms.view');
 Route::get('/404', [PagenotfoundController::class, 'index'])->name('404.view');
-
-
-Route::post('/propertiesqqq', [PropertyController::class, 'isearch'])->name('property.searching');
  
  
 Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
