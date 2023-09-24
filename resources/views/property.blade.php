@@ -205,6 +205,7 @@
                                             <img src="{{asset('assets/img/client-face1.png')}}" class="img-circle">
                                         </a>
                                     </div>
+                                    
                                     @foreach ($properties as $item)
                                   
                                

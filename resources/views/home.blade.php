@@ -273,151 +273,65 @@
         <div
           class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
           <!-- /.feature title -->
-          <h2>Top submitted property</h2>
+          <h2>New submitted property</h2>
           <p>
-            Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec
-            pretium. Nullam sed arcu ultricies .
+            A brief introduction of the new submitted property and its location.
           </p>
         </div>
       </div>
 
       <div class="row">
         <div class="proerty-th">
+          
+
+          @foreach ($new_properties as $item)
           <div class="col-sm-6 col-md-3 p0">
             <div class="box-two proerty-item">
               <div class="item-thumb">
-                <a href="property-1.html"
-                  ><img src="assets/img/demo/property-1.jpg"
-                /></a>
+                <a href="/properties/{{$item->id}}"
+                  >
+                
+                {{--   <img src="assets/img/demo/property-1.jpg"
+                /> --}}
+                <img src="{{$item->Images}}"
+                />
+              </a>
               </div>
               <div class="item-entry overflow">
-                <h5><a href="property-1.html">Super nice villa </a></h5>
+                <h5><a href="/properties/{{$item->id}}">{{$item->Title}} </a></h5>
                 <div class="dot-hr"></div>
-                <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
+                <span class="pull-left"><b>Area :</b> {{$item->Area}} Msq </span>
+                <span class="proerty-price pull-right"> <b>Price :</b> {{$item->Price}} ETB</span>
+                <span class="pull-left"><b>Location :</b>  {{$item->Location_city}} </span>
               </div>
             </div>
           </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-2.html"
-                  ><img src="assets/img/demo/property-2.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-2.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-3.html"
-                  ><img src="assets/img/demo/property-3.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-3.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                     <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-1.html"
-                  ><img src="assets/img/demo/property-4.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-1.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                     <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-3.html"
-                  ><img src="assets/img/demo/property-2.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-3.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                     <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-2.html"
-                  ><img src="assets/img/demo/property-4.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-2.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                     <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 p0">
-            <div class="box-two proerty-item">
-              <div class="item-thumb">
-                <a href="property-1.html"
-                  ><img src="assets/img/demo/property-3.jpg"
-                /></a>
-              </div>
-              <div class="item-entry overflow">
-                <h5><a href="property-1.html">Super nice villa </a></h5>
-                <div class="dot-hr"></div>
-                     <span class="pull-left"><b>Area :</b> 120m </span>
-                <span class="proerty-price pull-right"> <b>Price :</b> 3,000,000 ETB</span>
-                <span class="pull-left"><b>Location :</b> bole </span>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
+          <a href="/properties"> 
           <div class="col-sm-6 col-md-3 p0">
             <div class="box-tree more-proerty text-center">
               <div class="item-tree-icon">
                 <i class="fa fa-th"></i>
               </div>
+           
               <div class="more-entry overflow">
-                <h5><a href="property-1.html">CAN'T DECIDE ? </a></h5>
+                <h5><a  href="/properties">CAN'T DECIDE ? </a></h5>
                 <h5 class="tree-sub-ttl">Show all properties</h5>
+              
                 <button
                   class="btn border-btn more-black"
                   value="All properties">
-                  All properties
+                
+                 All properties
+               
                 </button>
+             
               </div>
+           
             </div>
           </div>
+        </a>
+
         </div>
       </div>
     </div>
@@ -596,8 +510,8 @@
                 <div class="count-item-circle">
                   <span class="pe-7s-home"></span>
                 </div>
-                <div class="chart" data-percent="12000">
-                  <h2 class="percent" id="counter1">0</h2>
+                <div class="chart" data-percent="2000">
+                  <h2 class="percent" id="counter1"></h2>
                   <h5>Properties in stock</h5>
                 </div>
               </div>
@@ -634,6 +548,7 @@
   <div class="boy-sale-area">
     <div class="container">
       <div class="row">
+        <a href="properties">
         <div
           class="col-md-6 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12">
           <div class="asks-first">
@@ -643,28 +558,31 @@
             <div class="asks-first-info">
               <h2>ARE YOU LOOKING FOR A Property?</h2>
               <p>
-                varius od lio eget conseq uat blandit, lorem auglue comm lodo
-                nisl no us nibh mas lsa
+                A brief introduction about the purpose of the document.
               </p>
             </div>
             <div class="asks-first-arrow">
-              <a href="properties.html"
+              <a href="properties"
                 ><span class="fa fa-angle-right"></span
               ></a>
             </div>
           </div>
         </div>
-        <div
+      </a>
+       
+        <a href="properties">
+          <div
           class="col-md-6 col-sm-10 col-sm-offset-1 col-xs-12 col-md-offset-0">
           <div class="asks-first">
             <div class="asks-first-circle">
-              <span class="fa fa-usd"></span>
+                  <div style="text-align: center;padding:22%;font-size:2.1rem"> 
+                    <strong>ETB</strong></div>
             </div>
             <div class="asks-first-info">
               <h2>DO YOU WANT TO SELL A Property?</h2>
               <p>
-                varius od lio eget conseq uat blandit, lorem auglue comm lodo
-                nisl no us nibh mas lsa
+                The local neighborhood and community amenities, including nearby schools,
+                 parks, and shopping centers.
               </p>
             </div>
             <div class="asks-first-arrow">
@@ -674,6 +592,7 @@
             </div>
           </div>
         </div>
+        </a>
         <div class="col-xs-12">
           <p class="asks-call">
             QUESTIONS? CALL US :
@@ -683,5 +602,25 @@
       </div>
     </div>
   </div>
+
+  
+  <script>
+    var HAPPY_CUSTOMER = {{ Js::from($HAPPY_CUSTOMER) }};
+  </script>
+  <script> 
+  var PROPERTIES_IN_STOCK = {{ Js::from($PROPERTIES_IN_STOCK) }};
+  </script>
+  <script>
+  var CITY_REGISTERED = {{ Js::from($CITY_REGISTERED) }};
+  </script>
+  <script>
+  var DEALER_BRANCHES = {{ Js::from($DEALER_BRANCHES) }};
+  </script>
+
+   
+    
+    
+    
+
 
 @endsection

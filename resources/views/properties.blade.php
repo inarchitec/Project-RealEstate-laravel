@@ -13,14 +13,17 @@
                 <h3 class="panel-title">Smart search</h3>
               </div>
               <div class="panel-body search-widget">
-                <form action="" class="form-inline">
+                <form  class="form-inline">
                   <fieldset>
                     <div class="row">
                       <div class="col-xs-12">
                         <input
-                          type="text"
+                          type="search"
+                          name="search"
                           class="form-control"
-                          placeholder="Key word" />
+                          placeholder="Key word" 
+                          value="{{ request('search') }}"
+                          />
                       </div>
                     </div>
                   </fieldset>
@@ -28,28 +31,30 @@
                   <fieldset>
                     <div class="row">
                       <div class="col-xs-6">
+                        <label for="select-city">Select City</label>
                         <select
                           id="lunchBegins"
                           class="selectpicker"
                           data-live-search="true"
+                          name="Location_city"
                           data-live-search-style="begins"
-                          title="Select Your City">
-                          <option>New york, CA</option>
-                          <option>Paris</option>
-                          <option>Casablanca</option>
-                          <option>Tokyo</option>
-                          <option>Marraekch</option>
-                          <option>kyoto , shibua</option>
+                          title="Select City">
+                          @foreach ($properties as $item)
+                          <option value="{{$item->Location_city}}" {{ $request->Location_city === $item->Location_city ? 'selected' : '' }}>{{$item->Location_city}}</option>
+                          @endforeach
+                         
+                           
                         </select>
                       </div>
                       <div class="col-xs-6">
+                        <label for="Status">Select Status</label>
                         <select
                           id="basic"
+                          name="Status"
                           class="selectpicker show-tick form-control">
-                          <option>-Status-</option>
-                          <option>Rent</option>
-                          <option>Boy</option>
-                          <option>used</option>
+                          @foreach ($properties as $item)
+                          <option value="{{$item->Status}}" {{ $request->Status === $item->Status ? 'selected' : '' }}>{{$item->Status}}</option>
+                          @endforeach
                         </select>
                       </div>
                     </div>
@@ -58,18 +63,19 @@
                   <fieldset class="padding-5">
                     <div class="row">
                       <div class="col-xs-6">
-                        <label for="price-range">Price range ($):</label>
+                        <label for="price-range">Price range (ETB):</label>
                         <input
-                          type="text"
+                          type="range"
                           class="span2"
-                          value=""
+                          value= ""
+                          {{-- name="Price" --}}
                           data-slider-min="0"
                           data-slider-max="600"
                           data-slider-step="5"
                           data-slider-value="[0,450]"
                           id="price-range" /><br />
-                        <b class="pull-left color">2000$</b>
-                        <b class="pull-right color">100000$</b>
+                        <b class="pull-left color">2000 ETB</b>
+                        <b class="pull-right color">100000 ETB</b>
                       </div>
                       <div class="col-xs-6">
                         <label for="property-geo">Property geo (m2) :</label>
@@ -77,6 +83,7 @@
                           type="text"
                           class="span2"
                           value=""
+                          {{-- name="areageo" --}}
                           data-slider-min="0"
                           data-slider-max="600"
                           data-slider-step="5"
@@ -302,40 +309,28 @@
         <div class="col-md-9 pr0 padding-top-40 properties-page">
           <div class="col-md-12 clear">
             <div class="col-xs-10 page-subheader sorting pl0">
-              <ul class="sort-by-list">
-                <li class="active">
-                  <a
-                    href="javascript:void(0);"
-                    class="order_by_date"
-                    data-orderby="property_date"
-                    data-order="ASC">
-                    Property Date <i class="fa fa-sort-amount-asc"></i>
-                  </a>
-                </li>
-                <li class="">
-                  <a
-                    href="javascript:void(0);"
-                    class="order_by_price"
-                    data-orderby="property_price"
-                    data-order="DESC">
-                    Property Price <i class="fa fa-sort-numeric-desc"></i>
-                  </a>
-                </li>
-              </ul>
-              <!--/ .sort-by-list-->
-
+            {{--              <select>--}}
               <div class="items-per-page">
-                <label for="items_per_page"><b>Property per page :</b></label>
+                <label for="items_per_page"><b></b>Sort By Price : </label>
                 <div class="sel">
-                  <select id="items_per_page" name="per_page">
-                    <option value="3">3</option>
-                    <option value="6">6</option>
-                    <option value="9">9</option>
-                    <option selected="selected" value="12">12</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="45">45</option>
-                    <option value="60">60</option>
+                  <select id="items_per_page" name="Price"  style="padding:4px ">
+                   {{--  <option value="{{$item->Status}}" {{ $request->Status === $item->Status ? 'selected' : '' }}>{{$item->Status}}</option> --}}
+
+                    <option  value="desc" {{ $request->Price === 'desc' ? 'selected' : '' }} >high to low </option>
+                    <option  value="asc" {{ $request->Price === 'asc'   ? 'selected' : '' }} > low to high </option>
+                     
+                  </select>
+                </div>
+                <!--/ .sel-->
+              </div>
+              <div class="items-per-page" style="margin-left: 50px">
+                <label for="items_per_page"><b></b>Sort By Date : </label>
+                <div class="sel">
+                  <select id="items_per_page" name="per_page" style="padding:4px ">
+                    <option selected="selected" value="3">newest</option>
+                    <option value="6"> oldest </option>
+                    
+                    
                   </select>
                 </div>
                 <!--/ .sel-->
@@ -356,7 +351,9 @@
 
           <div class="col-md-12 clear">
             <div id="list-type" class="proerty-th">
-             
+             {{-- @php
+                 echo $properties;
+             @endphp --}}
               @foreach ($properties as $property)
   
                  
@@ -369,7 +366,7 @@
                       ><img src="{{$property->Images}}"
                     /></a>
                   </div>
-
+                  {{-- "route("properties.show",$property->id)" --}}
                   <div class="item-entry overflow">
                     <h5><a href="/properties/{{$property->id}}"> {{$property->Title}} </a></h5>
                     <div class="dot-hr"></div>

@@ -7,26 +7,79 @@ use App\Models\Category;
 use App\Models\Property;
 use App\Models\Propertygallery;
 use Illuminate\Support\Facades\DB;
- 
+
+use function Laravel\Prompts\search;
+
 class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
 
-        $properties = DB::table('properties')
-    /*   ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id") */
-        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") 
-        ->get();    
 
      
-      /*    dd($properties);   */
+    public function index(Request $request)
+    {
+
+        
+
+        if(request('search')) {
+            $properties = DB::table('agents')
+            
+            ->join("properties","properties.assigned_agent", "=", "agents.id") 
+            ->where('Title', 'like', '%' . request('search') . '%') 
+            ->when($request->Location_city, function ($query) use ($request) {
+                $query->where('Location_city', $request->Location_city);
+            })
+            ->Where(function($query)
+                {
+                    $query 
+                    
+                    ->where('Status', 'like', '%%')
+               /*      ->whereBetween('Price', [0, 968197600]) */
+                    ->whereBetween('Area', [0, 1000])
+                    ->whereBetween('Bedroom', [0, 100])
+                    ->whereBetween('Parking', [0, 100])
+                    ->whereBetween('Bathroom', [0, 100])
+                    ->whereBetween('Kitchen', [0, 100])
+                    ->whereBetween('Living_room', [0, 100])
+                    ->whereBetween('Family_room', [0, 100])
+                    ->where('Additional_features', 'like', '%%');
+                })
+
+            ->get();    
+        }else{
+            $properties = DB::table('agents')
+            
+                ->join("properties","properties.assigned_agent", "=", "agents.id") 
+              /*   ->orderBy('Price','asc') */
+                ->when($request->Location_city, function ($query) use ($request) {
+                    $query->where('Location_city', $request->Location_city);
+                }) ->when($request->Status, function ($query) use ($request) {
+                    $query->where('Status', $request->Status);
+                    
+                    
+                })  
+                    
+                    
+               
+                    
+               
+               
+                 
+                
+                
+                ->get();    
+        }
+
+
+
 
 
         return view('properties',[
-            'properties' => $properties,] );
+            'properties' => $properties,
+            'request' => $request,
+            ] );
     
     }
 
@@ -52,10 +105,12 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
 
+        
         /* $slides = Propertygallery::all()->where("Property_id",$property->id) ; */
 
         
         $slides = DB::table('propertygalleries')->where("Property_id",$property->id)->get(/* "Room_Image" */) ;
+            
         $slides->toArray();
 /*     dd($slides);   */
  
@@ -63,16 +118,16 @@ class PropertyController extends Controller
          
 
 
-        $properties = DB::table('properties')
+        $properties = DB::table('agents')
    /*      ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id")  */
-        ->join("agents","properties.id", "=", "agents.Assigned_Property_id") 
+        ->join("properties","properties.assigned_agent", "=", "agents.id") 
         ->get()->where("id",$property->id) ;  
 
             
         
 
      
-   /*   dd($slides);     */
+    // dd($properties);     
         return view('property',[
             'property' => $property, 'properties' => $properties,  'slides' => $slides,  
            

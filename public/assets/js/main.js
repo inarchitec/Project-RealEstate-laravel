@@ -1,3 +1,4 @@
+/* console.log("hello",HAPPY_CUSTOMER); */
 $(window).load(function () { // makes sure the whole site is loaded
     $('#status').fadeOut(); // will first fade out the loading animation
     $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
@@ -92,16 +93,16 @@ $(document).ready(function () {
             var curval1 = parseInt($('#counter1').text().replace(' ', ''));
             var curval2 = parseInt($('#counter2').text());
             var curval3 = parseInt($('#counter3').text());
-            if (curval <= 1007) {
+            if (curval <= HAPPY_CUSTOMER) {
                 $('#counter').text(curval + 1);
             }
-            if (curval1 <= 1280) {
-                $('#counter1').text(sdf_FTS((curval1 + 20), 0, ' '));
+            if (curval1 <= PROPERTIES_IN_STOCK) {
+                $('#counter1').text(sdf_FTS((curval1 + 1), 0, ' '));
             }
-            if (curval2 <= 145) {
+            if (curval2 <= CITY_REGISTERED) {
                 $('#counter2').text(curval2 + 1);
             }
-            if (curval3 <= 1022) {
+            if (curval3 <= DEALER_BRANCHES) {
                 $('#counter3').text(curval3 + 1);
             }
         }, 2);

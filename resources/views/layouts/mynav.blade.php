@@ -8,7 +8,19 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GARO ESTATE | Home page</title>
+    <title>
+      {{ (request()->is('/')) ? 'GARO ESTATE | Home page' : '' }} 
+      {{ (request()->is('properties')) ? 'GARO ESTATE | Properties' : '' }} 
+      {{ (request()->is('blog')) ? 'GARO ESTATE | Blog' : '' }} 
+      {{ (request()->is('contact')) ? 'GARO ESTATE | Contact Us' : '' }} 
+      {{ (request()->is('register')) ? 'GARO ESTATE | Register' : '' }} 
+      {{ (request()->is('login')) ? 'GARO ESTATE | Login' : '' }}
+      {{ (request()->is('submitproperty')) ? 'GARO ESTATE | Submit Property' : '' }}  
+      {{ (request()->is('faq')) ? 'GARO ESTATE | FAQ' : '' }}
+      {{ (request()->is('terms')) ? 'GARO ESTATE | Terms' : '' }}
+      {{ (request()->is('404')) ? 'GARO ESTATE | 404' : '' }}
+      {{ (request()->is('properties/{property}')) ? 'GARO ESTATE | property' : '' }}
+    </title>
     <meta name="description" content="GARO is a real-estate template" />
     <meta name="author" content="Kimarotec" />
     <meta
@@ -131,19 +143,19 @@
           <ul class="main-nav nav navbar-nav navbar-right">
 
             <li class="dropdown ymm-sw" data-wow-delay="0.1s">
-              <a href="/" class="active">Home</a>
+              <a href="/" class="{{ (request()->is('/')) ? 'active' : '' }}">Home</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="{{route('properties.view')}}">Properties</a>
+              <a class="{{ (request()->is('properties')) ? 'active' : '' }}" href="{{route('properties.view')}}">Properties</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.1s">
-              <a class="" href="{{route('blog.view')}}">blog</a>
+              <a class="{{ (request()->is('blog')) ? 'active' : '' }}" href="{{route('blog.view')}}">blog</a>
             </li>
 
             <li class="wow fadeInDown" data-wow-delay="0.4s">
-              <a href="{{route('contact.view')}}">Contact</a>
+              <a class="{{ (request()->is('contact')) ? 'active' : '' }}"  href="{{route('contact.view')}}">Contact</a>
             </li>
           </ul>
         </div>
@@ -202,12 +214,12 @@
                 <h4>Quick links</h4>
                 <div class="footer-title-line"></div>
                 <ul class="footer-menu">
-                  <li><a href="properties.html">Properties</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="submit-property.html">Submit property </a></li>
-                  <li><a href="contact.html">Contact us</a></li>
-                  <li><a href="faq.html">fqa</a></li>
-                  <li><a href="faq.html">Terms </a></li>
+                  <li><a href="{{route('properties.view')}}">Properties</a></li>
+                 
+                  <li><a href="{{route('submitproperty.view')}}">Submit property </a></li>
+                  <li><a  href="{{route('contact.view')}}">Contact us</a></li>
+                  <li><a  href="{{route('faq.view')}}">Faq</a></li>
+                  <li><a  href="{{route('terms.view')}}">Terms </a></li>
                 </ul>
               </div>
             </div>
@@ -350,7 +362,7 @@
                 <li>
                   <a
                     class="wow fadeInUp animated"
-                    href="#"
+                    href="{{route('home.view')}}"
                     data-wow-delay="0.2s"
                     >Home</a
                   >
@@ -358,15 +370,15 @@
                 <li>
                   <a
                     class="wow fadeInUp animated"
-                    href="#"
+                    href="{{route('properties.view')}}"
                     data-wow-delay="0.3s"
-                    >Property</a
+                    >Properties</a
                   >
                 </li>
                 <li>
                   <a
                     class="wow fadeInUp animated"
-                    href="#"
+                    href="{{route('faq.view')}}"
                     data-wow-delay="0.4s"
                     >Faq</a
                   >
@@ -374,7 +386,7 @@
                 <li>
                   <a
                     class="wow fadeInUp animated"
-                    href="#"
+                    href="{{route('contact.view')}}"
                     data-wow-delay="0.6s"
                     >Contact</a
                   >
