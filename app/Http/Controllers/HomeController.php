@@ -34,11 +34,9 @@ class HomeController extends Controller
     public function search(Request $request){
         $response = $request->price["price-min"];
 
-        $new_properties = DB::table('properties')->
-
-        whereRaw('price BETWEEN ' . $request->price["price-min"] . ' AND ' . $request->price["price-max"] . '')
-        // ->where("Area",">",$request->geo["geo-min"])
-        // ->where("Area","<",$request->geo["geo-max"])
+        $new_properties = DB::table('properties')
+        ->whereRaw('price BETWEEN ' . $request->price["price-min"] . ' AND ' . $request->price["price-max"] . '')
+        ->whereRaw('Area BETWEEN ' . $request->geo["geo-min"] . ' AND ' . $request->geo["geo-max"] . '')
         ->get() ;
         $response = '';
         foreach ($new_properties as $item) {

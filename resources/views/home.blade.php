@@ -123,7 +123,7 @@
                     data-slider-min="2000000"
                     data-slider-max="40000000"
                     data-slider-step="100000"
-                    data-slider-value="[200000,1000000]"
+                    data-slider-value="[2000000,10000000]"
                     id="price-range" /><br />
                   <b class="pull-left color">2,000,000</b>
                   <b class="pull-right color">40,000,000</b>
