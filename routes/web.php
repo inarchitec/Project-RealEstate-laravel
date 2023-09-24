@@ -51,7 +51,7 @@ Route::get('/404', [PagenotfoundController::class, 'index'])->name('404.view');
  
  
 Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
- 
+
 
 
 

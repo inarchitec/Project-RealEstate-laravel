@@ -120,10 +120,10 @@
                     type="text"
                     class="span2"
                     value=""
-                    data-slider-min="0"
-                    data-slider-max="600"
-                    data-slider-step="5"
-                    data-slider-value="[0,450]"
+                    data-slider-min="20000"
+                    data-slider-max="100000"
+                    data-slider-step="5000"
+                    data-slider-value="[50000,80000]"
                     id="price-range" /><br />
                   <b class="pull-left color">2000ETB</b>
                   <b class="pull-right color">100000ETB</b>
@@ -134,12 +134,12 @@
                   <label for="property-geo">Property geo (m2) :</label>
                   <input
                     type="text"
-                    class="span2"
+                    class="span3"
                     value=""
-                    data-slider-min="0"
-                    data-slider-max="600"
-                    data-slider-step="5"
-                    data-slider-value="[50,450]"
+                    data-slider-min="40"
+                    data-slider-max="1200"
+                    data-slider-step="20"
+                    data-slider-value="[50,500]"
                     id="property-geo" /><br />
                   <b class="pull-left color">40m</b>
                   <b class="pull-right color">12000m</b>
@@ -150,7 +150,7 @@
                   <label for="price-range">Min baths :</label>
                   <input
                     type="text"
-                    class="span2"
+                    class="span4"
                     value=""
                     data-slider-min="1"
                     data-slider-max="20"
@@ -166,15 +166,15 @@
                   <label for="property-geo">Min bed :</label>
                   <input
                     type="text"
-                    class="span2"
+                    class="span5"
                     value=""
                     data-slider-min="1"
-                    data-slider-max="50"
+                    data-slider-max="15"
                     data-slider-step="1"
-                    data-slider-value="[5,25]"
+                    data-slider-value="[5,10]"
                     id="min-bed" /><br />
                   <b class="pull-left color">1</b>
-                  <b class="pull-right color">50</b>
+                  <b class="pull-right color">15</b>
                 </div>
                 <!-- End of  -->
               </div>
@@ -253,12 +253,14 @@
               </div>
             </div>
             <div class="center">
-              <input
+              {{-- <input
+                onClick="meetme()"
                 type="submit"
                 value=""
-                class="btn btn-default btn-lg-sheach" />
+                class="btn btn-default btn-lg-sheach" /> --}}
             </div>
           </form>
+          <button onClick="meetme()" class="btn btn-default btn-lg-sheach" ></button>
         </div>
       </div>
     </div>
@@ -617,10 +619,57 @@
   var DEALER_BRANCHES = {{ Js::from($DEALER_BRANCHES) }};
   </script>
 
-   
-    
-    
-    
+<script>
+//   $('.span2').slider().on('slide', function(ev){
+//       let data = $('.span2').slider().val();
+//       let dataval = data.split(",");
+//       console.log('min-val'+dataval[0]);
+//       console.log('max-val'+dataval[1]);
 
+// });
+
+  function meetme(){
+    let dataval = "50000,80000";
+    let dataval2 = "50,500";
+    let dataval3 = "5,10";
+    let dataval4 = "5,15";
+  let data = $('.span2').slider().val();
+      data == ''?data = dataval:data;
+      dataval = data.split(",");
+
+  let data2 = $('.span3').slider().val();
+      data2 == ''?data2 = dataval2:data2;
+      dataval2 = data2.split(",");
+
+  let data3 = $('.span4').slider().val();
+      data3 == ''?data3 = dataval3:data3;
+      dataval3 = data3.split(",");
+
+  let data4 = $('.span5').slider().val();
+      data4 == ''?data4 = dataval4:data4;
+      dataval4 = data4.split(",");
+
+      var searchdata = {
+        "price":{
+          'price-min':dataval[0],
+          'price-max':dataval[1]
+        },
+        "geo":{
+          'geo-min':dataval2[0],
+          'geo-max':dataval2[1]
+        },
+        "bath":{
+          'bath-min':dataval3[0],
+          'bath-max':dataval3[1]
+        },
+        "bed":{
+          'bed-min':dataval4[0],
+          'bed-max':dataval4[1]
+        }
+        
+      }
+      console.log(searchdata)
+  }
+</script>
 
 @endsection

@@ -69,9 +69,9 @@
                           class="span2"
                           value= ""
                           {{-- name="Price" --}}
-                          data-slider-min="0"
-                          data-slider-max="600"
-                          data-slider-step="5"
+                          data-slider-min="2000"
+                          data-slider-max="100000"
+                          data-slider-step="50"
                           data-slider-value="[0,450]"
                           id="price-range" /><br />
                         <b class="pull-left color">2000 ETB</b>

@@ -1,8 +1,8 @@
 /* console.log("hello",HAPPY_CUSTOMER); */
 $(window).load(function () { // makes sure the whole site is loaded
     $('#status').fadeOut(); // will first fade out the loading animation
-    $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-    $('body').delay(350).css({'overflow': 'visible'});
+    $('#preloader').delay(1).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    $('body').delay(1).css({'overflow': 'visible'});
 })
 $(document).ready(function () {
 
@@ -93,6 +93,7 @@ $(document).ready(function () {
             var curval1 = parseInt($('#counter1').text().replace(' ', ''));
             var curval2 = parseInt($('#counter2').text());
             var curval3 = parseInt($('#counter3').text());
+
             if (curval <= HAPPY_CUSTOMER) {
                 $('#counter').text(curval + 1);
             }
