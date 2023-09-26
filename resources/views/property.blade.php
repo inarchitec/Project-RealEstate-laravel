@@ -481,13 +481,18 @@
                                 </fieldset>
 
                                 <fieldset >
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-xs-12">  
-                                            <input class="button btn largesearch-btn" value="Search" type="submit">
+                                            <button onClick="meetme()" class="btn btn-default btn-lg-sheach" >Search</button>
                                         </div>  
-                                    </div>
+                                    </div> --}}
                                 </fieldset>                                     
                             </form>
+                            <div class="row">
+                                <div class="col-xs-12">  
+                                    <button onClick="meetme()" class="btn btn-default btn-lg-sheach" >Search</button>
+                                </div>  
+                            </div>
                         </div>
                     </div>
 
@@ -499,4 +504,69 @@
     </div>
 </div> 
 
+
+<script>
+    function meetme(){
+      let dataval = "50000,800000";
+      let dataval2 = "50,500";
+      let dataval3 = "5,10";
+      let dataval4 = "5,15";
+    let data = $('.span2').slider().val();
+        data == ''?data = dataval:data;
+        dataval = data.split(",");
+  
+    let data2 = $('.span3').slider().val();
+        data2 == ''?data2 = dataval2:data2;
+        dataval2 = data2.split(",");
+  
+    let data3 = $('.span4').slider().val();
+        data3 == ''?data3 = dataval3:data3;
+        dataval3 = data3.split(",");
+  
+    let data4 = $('.span5').slider().val();
+        data4 == ''?data4 = dataval4:data4;
+        dataval4 = data4.split(",");
+  
+        var searchdata = {
+          "price":{
+            'price-min':dataval[0],
+            'price-max':dataval[1]
+          },
+          "geo":{
+            'geo-min':dataval2[0],
+            'geo-max':dataval2[1]
+          },
+          "bath":{
+            'bath-min':dataval3[0],
+            'bath-max':dataval3[1]
+          },
+          "bed":{
+            'bed-min':dataval4[0],
+            'bed-max':dataval4[1]
+          }
+          
+        }
+        console.log(searchdata)
+  
+  
+      $.ajax(
+        {
+          url: "{{route('prop.search')}}",
+          // dataType: 'json', // type of response data
+          // timeout: 500, 
+          data: searchdata,
+          success: function(result){
+            // console.log(result);
+            $("#search_results").html(result);
+          },
+          error: function (jqXhr, textStatus, errorMessage) { // error callback 
+            // $('p').append('Error: ' + errorMessage);
+            alert("fail");
+          }
+        });
+    }
+  
+  
+  </script>
+  
 @endsection

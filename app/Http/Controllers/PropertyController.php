@@ -90,37 +90,50 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-
-        
-        /* $slides = Propertygallery::all()->where("Property_id",$property->id) ; */
-
-        
         $slides = DB::table('propertygalleries')->where("Property_id",$property->id)->get(/* "Room_Image" */) ;
-            
         $slides->toArray();
-/*     dd($slides);   */
  
-     
-         
-
-
         $properties = DB::table('agents')
-   /*      ->join("propertygalleries","properties.id", "=", "propertygalleries.Property_id")  */
         ->join("properties","properties.assigned_agent", "=", "agents.id") 
         ->get()->where("id",$property->id) ;  
 
-            
-        
-
-     
-    // dd($properties);     
-        return view('property',[
-            'property' => $property, 'properties' => $properties,  'slides' => $slides,  
-           
-           
-        ]);
+        return view('property',['property' => $property, 'properties' => $properties,  'slides' => $slides]);
        
     }
+    
+    public function search(Request $request){
+        $response = $request->price["price-min"];
+
+        $new_properties = DB::table('properties')
+        ->whereRaw('price BETWEEN ' . $request->price["price-min"] . ' AND ' . $request->price["price-max"] . '')
+        ->whereRaw('Area BETWEEN ' . $request->geo["geo-min"] . ' AND ' . $request->geo["geo-max"] . '')
+        ->get() ;
+        $response = '';
+        foreach ($new_properties as $item) {
+            $response .= "<div class='col-sm-6 col-md-4 p0'>
+            <div class='box-two proerty-item'>
+            <div class='item-thumb'>";
+                $response .= "<a href='/properties/".$item->id."'><img src='".$item->Images."'/></a>";
+                $response .= "</div>
+                <div class='item-entry overflow'>
+                    <h5>";
+                $response .= "<a href='/properties/".$item->id."'>".$item->Title."</a></h5>
+                    <div class='dot-hr'></div>";
+                $response .= "<span class='pull-left'><b>Area :</b>".$item->Area." Msq </span>
+                    <span class='proerty-price pull-right'>";
+                $response .= "<b>Price :</b>".$item->Price." ETB</span> <span class='pull-left'><b>Location :</b>".$item->Location_city."</span>";
+                $response .="<div class='property-icon'>
+                  <img src='".asset('assets/img/icon/bed.png')."' />". $item->Bedroom.
+                  "<img src='".asset('assets/img/icon/shawer.png')."' />". $item->Bathroom.
+                  "<img src='".asset('assets/img/icon/cars.png')."' />". $item->Parking.
+                "</div>
+              </div>
+            </div>
+          </div>";
+        }
+        return $response;
+    }
+
 
     /**
      * Show the form for editing the specified resource.
