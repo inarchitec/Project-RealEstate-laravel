@@ -174,7 +174,7 @@
 
                         <h4 class="s-property-title">Address</h4>                            
                         <ul>
-                            <li><a href="properties.html">{{$property->Location_woreda_kebele}}</a></li>   
+                            <li><a href="properties.html">{{$property->Location_woreda}}</a></li>   
                             <li><a href="properties.html">{{$property->Location_city}}</a></li> 
                         </ul>
 
@@ -211,7 +211,7 @@
                                
                                     <div class="col-xs-8 col-sm-8 ">
                                         <h3 class="dealer-name">
-                                            <a href="">  {{$item->Name}}</a><br>
+                                            <a href="">  {{$item->Agent_First_Name}}</a><br>
                                             <span>Real Estate Agent</span>        
                                         </h3>
                                         <div class="dealer-social-media">
@@ -238,8 +238,8 @@
                                 <div class="clear">
                                     <ul class="dealer-contacts">                                       
                                         <li><i class="pe-7s-map-marker strong"> </i> 9089 your adress her</li>
-                                        <li><i class="pe-7s-mail strong"> </i> {{$item->Email}}</li>
-                                        <li><i class="pe-7s-call strong"> </i>{{$item->Phone}}</li>
+                                        <li><i class="pe-7s-mail strong"> </i> {{$item->Agent_Email}}</li>
+                                        <li><i class="pe-7s-call strong"> </i>{{$item->Agent_Phone}}</li>
                                     </ul>
                                     <p>{{$item->Description}}</p>
                                  </div>

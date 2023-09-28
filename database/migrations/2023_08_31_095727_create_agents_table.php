@@ -13,15 +13,26 @@ return new class extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->id(); 
-            $table->integer("Assigned_Property_id");
+           
            
             $table->string("Attributes");
-            $table->string("Name");
-            $table->string("Email");
-            $table->string("Phone");
+            
+            $table->string("Agent_Email");
+            $table->string("Agent_Phone");
+           
             $table->string("Description");
             $table->timestamps();
             $table->string("Photo")->default("jurica-koletic-7YVZYZeITc8-unsplash.jpg") ;
+            
+  
+            $table->string("Agent_First_Name");
+            $table->string("Agent_Last_Name");
+           
+            $table->string("Agent_Woreda");
+            $table->string("Agent_Kifle_Ketama");
+            $table->string("Agent_City");
+            $table->string("Agent_Kebele_Id");
+           
         });
     }
 

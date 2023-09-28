@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('propertygalleries', function (Blueprint $table) {
-            $table->id(); 
+        Schema::create('gallaries', function (Blueprint $table) {
+            $table->id();
+         
             $table->integer("Property_id") ;
             $table->string("Title");
             $table->string("Room_Name");
             $table->string("Type");
             $table->string("Room_Image")->default("jurica-koletic-7YVZYZeITc8-unsplash.jpg") ;
+            $table->string("Room_Video")->default("jurica-koletic-7YVZYZeITc8-unsplash.jpg") ;
             $table->timestamps();
+   
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('propertygalleries');
+        Schema::dropIfExists('gallaries');
     }
 };
