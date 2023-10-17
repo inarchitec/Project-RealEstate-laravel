@@ -65,32 +65,30 @@
                       <div class="col-xs-6">
                         <label for="price-range">Price range (ETB):</label>
                         <input
-                          type="range"
-                          class="span2"
-                          value= ""
-                          {{-- name="Price" --}}
-                          data-slider-min="0"
-                          data-slider-max="600"
-                          data-slider-step="5"
-                          data-slider-value="[0,450]"
-                          id="price-range" /><br />
-                        <b class="pull-left color">2000 ETB</b>
-                        <b class="pull-right color">100000 ETB</b>
+                            type="text"
+                            class="span2"
+                            value=""
+                            data-slider-min="2000000"
+                            data-slider-max="40000000"
+                            data-slider-step="100000"
+                            data-slider-value="[2000000,10000000]"
+                            id="price-range" /><br />
+                          <b class="pull-left color">2,000,000</b>
+                          <b class="pull-right color">40,000,000</b>
                       </div>
                       <div class="col-xs-6">
                         <label for="property-geo">Property geo (m2) :</label>
                         <input
-                          type="text"
-                          class="span2"
-                          value=""
-                          {{-- name="areageo" --}}
-                          data-slider-min="0"
-                          data-slider-max="600"
-                          data-slider-step="5"
-                          data-slider-value="[50,450]"
-                          id="property-geo" /><br />
-                        <b class="pull-left color">40m</b>
-                        <b class="pull-right color">12000m</b>
+                            type="text"
+                            class="span3"
+                            value=""
+                            data-slider-min="40"
+                            data-slider-max="1200"
+                            data-slider-step="20"
+                            data-slider-value="[50,500]"
+                            id="property-geo" /><br />
+                          <b class="pull-left color">40m</b>
+                          <b class="pull-right color">12000m</b>
                       </div>
                     </div>
                   </fieldset>
@@ -101,30 +99,30 @@
                         <label for="price-range">Min baths :</label>
                         <input
                           type="text"
-                          class="span2"
+                          class="span4"
                           value=""
-                          data-slider-min="0"
-                          data-slider-max="600"
-                          data-slider-step="5"
-                          data-slider-value="[250,450]"
+                          data-slider-min="1"
+                          data-slider-max="20"
+                          data-slider-step="1"
+                          data-slider-value="[5,10]"
                           id="min-baths" /><br />
                         <b class="pull-left color">1</b>
-                        <b class="pull-right color">120</b>
+                        <b class="pull-right color">20</b>
                       </div>
 
                       <div class="col-xs-6">
                         <label for="property-geo">Min bed :</label>
                         <input
                           type="text"
-                          class="span2"
+                          class="span5"
                           value=""
-                          data-slider-min="0"
-                          data-slider-max="600"
-                          data-slider-step="5"
-                          data-slider-value="[250,450]"
+                          data-slider-min="1"
+                          data-slider-max="15"
+                          data-slider-step="1"
+                          data-slider-value="[5,10]"
                           id="min-bed" /><br />
                         <b class="pull-left color">1</b>
-                        <b class="pull-right color">120</b>
+                        <b class="pull-right color">15</b>
                       </div>
                     </div>
                   </fieldset>
@@ -218,17 +216,11 @@
                     </div>
                   </fieldset>
 
-                  <fieldset>
-                    <div class="row">
-                      <div class="col-xs-12">
-                        <input
-                          class="button btn largesearch-btn"
-                          value="Search"
-                          type="submit" />
-                      </div>
-                    </div>
-                  </fieldset>
+                  
                 </form>
+                <fieldset>
+                  <button onClick="meetme()" class="btn btn-default btn-lg-sheach" >Search</button>
+                </fieldset>
               </div>
             </div>
 
@@ -351,43 +343,36 @@
 
           <div class="col-md-12 clear">
             <div id="list-type" class="proerty-th">
-             {{-- @php
-                 echo $properties;
-             @endphp --}}
-              @foreach ($properties as $property)
-  
-                 
-              
- 
-              <div class="col-sm-6 col-md-4 p0">
-                <div class="box-two proerty-item">
-                  <div class="item-thumb">
-                    <a href="/properties/{{$property->id}}"
-                      ><img src="{{$property->Images}}"
-                    /></a>
-                  </div>
-                  {{-- "route("properties.show",$property->id)" --}}
-                  <div class="item-entry overflow">
-                    <h5><a href="/properties/{{$property->id}}"> {{$property->Title}} </a></h5>
-                    <div class="dot-hr"></div>
-                    <span class="pull-left"><b> Area :</b> {{$property->Area}} Msq </span>
-                    <span class="proerty-price pull-right"> {{$property->Price}} ETB</span>
-                    <p style="display: none">
-                      Suspendisse ultricies Suspendisse ultricies Nulla quis
-                      dapibus nisl. Suspendisse ultricies commodo arcu nec
-                      pretium ...
-                    </p>
-                    <div class="property-icon">
-                      <img src="{{asset('assets/img/icon/bed.png')}}" /> ({{$property->Bedroom}})
-                      <img src="{{asset('assets/img/icon/shawer.png')}}" /> ({{$property->Bathroom}})
-                      <img src="{{asset('assets/img/icon/cars.png')}}" /> ({{$property->Parking}})
+              <div id="search_results">
+                @foreach ($properties as $property)
+                <div class="col-sm-6 col-md-4 p0">
+                  <div class="box-two proerty-item">
+                    <div class="item-thumb">
+                      <a href="/properties/{{$property->id}}"
+                        ><img src="{{$property->Images}}"
+                      /></a>
+                    </div>
+                    {{-- "route("properties.show",$property->id)" --}}
+                    <div class="item-entry overflow">
+                      <h5><a href="/properties/{{$property->id}}"> {{$property->Title}} </a></h5>
+                      <div class="dot-hr"></div>
+                      <span class="pull-left"><b> Area :</b> {{$property->Area}} Msq </span>
+                      <span class="proerty-price pull-right"> {{$property->Price}} ETB</span>
+                      <p style="display: none">
+                        Suspendisse ultricies Suspendisse ultricies Nulla quis
+                        dapibus nisl. Suspendisse ultricies commodo arcu nec
+                        pretium ...
+                      </p>
+                      <div class="property-icon">
+                        <img src="{{asset('assets/img/icon/bed.png')}}" /> ({{$property->Bedroom}})
+                        <img src="{{asset('assets/img/icon/shawer.png')}}" /> ({{$property->Bathroom}})
+                        <img src="{{asset('assets/img/icon/cars.png')}}" /> ({{$property->Parking}})
+                      </div>
                     </div>
                   </div>
                 </div>
+                @endforeach
               </div>
-            
-              @endforeach
-              
  
             </div>
           </div>
@@ -410,4 +395,69 @@
       </div>
     </div>
   </div>
+
+  
+<script>
+  function meetme(){
+    let dataval = "50000,800000";
+    let dataval2 = "50,500";
+    let dataval3 = "5,10";
+    let dataval4 = "5,15";
+  let data = $('.span2').slider().val();
+      data == ''?data = dataval:data;
+      dataval = data.split(",");
+
+  let data2 = $('.span3').slider().val();
+      data2 == ''?data2 = dataval2:data2;
+      dataval2 = data2.split(",");
+
+  let data3 = $('.span4').slider().val();
+      data3 == ''?data3 = dataval3:data3;
+      dataval3 = data3.split(",");
+
+  let data4 = $('.span5').slider().val();
+      data4 == ''?data4 = dataval4:data4;
+      dataval4 = data4.split(",");
+
+      var searchdata = {
+        "price":{
+          'price-min':dataval[0],
+          'price-max':dataval[1]
+        },
+        "geo":{
+          'geo-min':dataval2[0],
+          'geo-max':dataval2[1]
+        },
+        "bath":{
+          'bath-min':dataval3[0],
+          'bath-max':dataval3[1]
+        },
+        "bed":{
+          'bed-min':dataval4[0],
+          'bed-max':dataval4[1]
+        }
+        
+      }
+      console.log(searchdata)
+
+
+    $.ajax(
+      {
+        url: "{{route('prop.search')}}",
+        // dataType: 'json', // type of response data
+        // timeout: 500, 
+        data: searchdata,
+        success: function(result){
+          // console.log(result);
+          $("#search_results").html(result);
+        },
+        error: function (jqXhr, textStatus, errorMessage) { // error callback 
+          // $('p').append('Error: ' + errorMessage);
+          alert("fail");
+        }
+      });
+  }
+
+
+</script>
 @endsection

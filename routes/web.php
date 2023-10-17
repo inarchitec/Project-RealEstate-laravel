@@ -38,6 +38,8 @@ use App\Models\Property;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
+Route::get('/search', [HomeController::class, 'search'])->name('home.prop.search');
+Route::get('/property/search', [PropertyController::class, 'search'])->name('prop.search');
 
 
 Route::get('/properties', [PropertyController::class, 'index'],)->name('properties.view');
@@ -49,12 +51,10 @@ Route::get('/submitproperty', [SubmitpropertyController::class, 'index'])->name(
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.view');
 Route::get('/terms', [TermsController::class, 'index'])->name('terms.view');
 Route::get('/404', [PagenotfoundController::class, 'index'])->name('404.view');
-
-
-/* Route::post('/propertiesqqq', [PropertyController::class, 'isearch'])->name('property.searching'); */
  
  
 Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
+
 
 Route::get('/admin', [adminController::class, 'index'])->name('admin.view');
  
