@@ -37,6 +37,8 @@ use App\Models\Property;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
+Route::get('/search', [HomeController::class, 'search'])->name('home.prop.search');
+Route::get('/property/search', [PropertyController::class, 'search'])->name('prop.search');
 
 
 Route::get('/properties', [PropertyController::class, 'index'],)->name('properties.view');
@@ -51,7 +53,7 @@ Route::get('/404', [PagenotfoundController::class, 'index'])->name('404.view');
  
  
 Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
- 
+
 
 
 

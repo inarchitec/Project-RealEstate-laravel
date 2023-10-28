@@ -55,7 +55,13 @@
     <link rel="stylesheet" href="{{asset('assets/css/lightslider.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" />
+    
+    <link rel="stylesheet" href="{{asset('assets/css/sliderx.css')}}" />
     {{-- <link rel="stylesheet" href="{{asset('assets/css/wizard.css')}}" /> --}}
+    <script src="{{asset('assets/js/maindefault.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>  
+
+
     
    </head>
   <body>
@@ -129,7 +135,7 @@
           <div class="button navbar-right">
             <button
               class="navbar-btn nav-button wow bounceInRight login"
-              onclick=" window.open('register')"
+              onclick=" window.open('login')"
               data-wow-delay="0.4s">
               Login
             </button>
@@ -418,7 +424,6 @@
  
         
     <script src="{{asset('assets/js/modernizr-2.6.2.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>  
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-hover-dropdown.js')}}"></script>
@@ -427,9 +432,11 @@
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/js/wow.js')}}"></script>
     <script src="{{asset('assets/js/icheck.min.js')}}"></script>
-    <script src="{{asset('assets/js/price-range.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
+    {{-- <script src="{{asset('assets/js/price-range.js')}}"></script> --}}
+    <script src="{{asset('assets/js/bootstrap-slider.js')}}"></script>
+    <script src="{{asset('assets/js/lightslider.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap-sliderx.js')}}"></script>
 
 
  
@@ -450,6 +457,7 @@
         });
     });
 </script>
+
 
 
 </body>
