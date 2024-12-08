@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
@@ -54,6 +55,9 @@ Route::get('/404', [PagenotfoundController::class, 'index'])->name('404.view');
  
 Route::get('/properties/{property}', [PropertyController::class, 'show'] ) ;
 
+
+Route::get('/admin', [adminController::class, 'index'])->name('admin.view');
+ 
 
 
 

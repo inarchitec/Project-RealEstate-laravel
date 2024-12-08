@@ -4,10 +4,13 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Agent;
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Agent;
+use App\Models\Gallary;
+ 
 use App\Models\Property;
+ 
 use App\Models\Propertygallery;
 use Illuminate\Database\Seeder;
 
@@ -19,19 +22,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        User::factory(10)->create();
+        User::factory(100)->create();
 
        Property::factory(10)->create();
-       Blog::factory(10)->create();
-       Agent::factory(10)->create();
-       
-      
-      /*  Propertygallery::factory((10))->create(); */
-
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         Gallary::factory(400)->create();  
+       Blog::factory(20)->create();
+       Agent::factory(20)->create();
+     
     }
 }

@@ -18,6 +18,9 @@ class PropertyController extends Controller
 
     public function index(Request $request)
     {
+
+        
+
         if(request('search')) {
             $properties = DB::table('agents')
             

@@ -28,8 +28,8 @@ class Property extends Model
             'Images',
             'Videos',
             'Location_city',
-            'Location_woreda_kebele',
+            'Location_woreda',
         
-    ];
+    ]; 
     
 }
